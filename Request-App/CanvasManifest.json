@@ -117,14 +117,14 @@
     "Id": "60da23bb-743f-4ef9-88b5-cc6f0b952c63",
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "",
-    "ManualOfflineProfileId": null,
-    "Name": "Request App",
+    "ManualOfflineProfileId": "",
+    "Name": "Request App DEV",
     "OriginatingVersion": "1.338",
     "ParserErrorCount": 0,
     "ShowStatusBar": false
   },
   "PublishInfo": {
-    "AppName": "Request App",
+    "AppName": "Request App DEV",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",
@@ -135,6 +135,6 @@
     "UserLocale": "en-US"
   },
   "ScreenOrder": [
-    "Screen1"
+    "Home"
   ]
 }

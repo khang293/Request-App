@@ -1,0 +1,8 @@
+Home As screen:
+
+    Label1 As label:
+        Text: ="Đinh Duy Khang"
+        X: =544
+        Y: =312
+        ZIndex: =1
+
