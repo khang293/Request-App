@@ -194,6 +194,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "FormScreen.ScreenContainer3.MainContainer3.SidebarContainer1.InfoButtonCanvas1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "FormScreen.ScreenContainer3.MainContainer3.SidebarContainer1.InfoButtonCanvas1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "FormScreen",
+                "type": "FormScreen.ScreenContainer3.MainContainer3.SidebarContainer1.InfoButtonCanvas1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.stickerpusheendriving"
                 }
               ],

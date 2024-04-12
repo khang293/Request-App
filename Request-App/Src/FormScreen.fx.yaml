@@ -104,6 +104,67 @@
                     Width: =Parent.Width
                     ZIndex: =7
 
+                    Status_DataCard3 As typedDataCard.fluentV9ComboBoxEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Status"
+                        Default: |-
+                            =If(ApprovalForm.Mode=FormMode.New,{Value:"Pending Approval"},ThisItem.Status)
+                        DisplayMode: =DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Status")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =70
+                        Required: =false
+                        Update: =DataCardValue19.Selected
+                        Width: =992
+                        X: =0
+                        Y: =5
+                        ZIndex: =1
+
+                        DataCardKey19 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =22
+                            Text: =Parent.DisplayName
+                            Weight: ='TextCanvas.Weight'.Semibold
+                            Width: =Parent.Width - 48
+                            Wrap: =false
+                            X: =24
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue19 As Combobox.pcfdataset:
+                            AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                            DefaultSelectedItems: =[Parent.Default]
+                            DisplayMode: =Parent.DisplayMode
+                            Height: =32
+                            Items: =Choices([@'Request HR'].Status)
+                            ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                            Width: =Parent.Width - 48
+                            X: =24
+                            Y: =DataCardKey19.Y + DataCardKey19.Height + 4
+                            ZIndex: =2
+
+                        ErrorMessage19 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =30
+                            Text: =Parent.Error
+                            Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =Parent.Width - 48
+                            Wrap: =true
+                            X: =24
+                            Y: =DataCardValue19.Y + DataCardValue19.Height
+                            ZIndex: =3
+
+                        StarVisible19 As Text:
+                            Align: ='TextCanvas.Align'.Center
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =20
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            X: =0
+                            Y: =DataCardKey19.Y
+                            ZIndex: =4
+
                     Title_DataCard1 As typedDataCard.fluentV9TextualEditCard:
                         BorderStyle: =BorderStyle.Solid
                         DataField: ="Title"
@@ -291,6 +352,72 @@
                             Y: =DataCardKey3.Y
                             ZIndex: =4
 
+                    Attachments_DataCard1 As typedDataCard.attachmentsEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="{Attachments}"
+                        Default: =ThisItem.Attachments
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"{Attachments}")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue9.Attachments
+                        Width: =992
+                        WidthFit: =true
+                        X: =0
+                        Y: =6
+                        ZIndex: =8
+
+                        DataCardKey9 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue9 As attachments:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            DisplayMode: =Parent.DisplayMode
+                            IsInDataCard: =true
+                            Items: =Parent.Default
+                            PaddingBottom: =5
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey9.Y + DataCardKey9.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage9 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue9.Y + DataCardValue9.Height
+                            ZIndex: =3
+
+                        StarVisible9 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey9.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey9.Y
+                            ZIndex: =4
+
                     Approvers_DataCard1 As typedDataCard.fluentV9ComboBoxMultiSelectEditCard:
                         BorderStyle: =BorderStyle.Solid
                         DataField: ="Approver"
@@ -441,72 +568,6 @@
                             Y: =DataCardKey7.Y
                             ZIndex: =4
 
-                    Attachments_DataCard1 As typedDataCard.attachmentsEditCard:
-                        BorderStyle: =BorderStyle.Solid
-                        DataField: ="{Attachments}"
-                        Default: =ThisItem.Attachments
-                        DisplayMode: =Parent.DisplayMode
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"{Attachments}")
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =50
-                        Required: =false
-                        Update: =DataCardValue9.Attachments
-                        Width: =992
-                        WidthFit: =true
-                        X: =0
-                        Y: =5
-                        ZIndex: =8
-
-                        DataCardKey9 As label:
-                            AutoHeight: =true
-                            Height: =34
-                            Text: =Parent.DisplayName
-                            Width: =Parent.Width - 60
-                            Wrap: =false
-                            X: =30
-                            Y: =10
-                            ZIndex: =1
-
-                        DataCardValue9 As attachments:
-                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                            DisplayMode: =Parent.DisplayMode
-                            IsInDataCard: =true
-                            Items: =Parent.Default
-                            PaddingBottom: =5
-                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                            PaddingRight: =5
-                            PaddingTop: =5
-                            Tooltip: =Parent.DisplayName
-                            Width: =Parent.Width - 60
-                            X: =30
-                            Y: =DataCardKey9.Y + DataCardKey9.Height + 5
-                            ZIndex: =2
-
-                        ErrorMessage9 As label:
-                            AutoHeight: =true
-                            Height: =10
-                            Live: =Live.Assertive
-                            PaddingBottom: =0
-                            PaddingLeft: =0
-                            PaddingRight: =0
-                            PaddingTop: =0
-                            Text: =Parent.Error
-                            Visible: =Parent.DisplayMode=DisplayMode.Edit
-                            Width: =Parent.Width - 60
-                            X: =30
-                            Y: =DataCardValue9.Y + DataCardValue9.Height
-                            ZIndex: =3
-
-                        StarVisible9 As label:
-                            Align: =Align.Center
-                            Height: =DataCardKey9.Height
-                            Text: ="*"
-                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                            Width: =30
-                            Wrap: =false
-                            Y: =DataCardKey9.Y
-                            ZIndex: =4
-
                 SubmitButton1 As Button:
                     AccessibleLabel: ="Submit approval request button"
                     AlignInContainer: =AlignInContainer.End
@@ -537,9 +598,8 @@
                 RadiusBottomRight: =8
                 RadiusTopLeft: =8
                 RadiusTopRight: =8
-                Visible: |-
-                    =//If(FormScreen.Size = ScreenSize.Small || ApprovalForm.Mode =FormMode.New, false, true)
-                    true
+                Visible: |
+                    =If(FormScreen.Size = ScreenSize.Small || ApprovalForm.Mode =FormMode.New, false, true)
                 ZIndex: =9
 
                 ReviewersText1 As Text:
@@ -554,7 +614,18 @@
                     Width: =115
                     X: =0
                     Y: =0
-                    ZIndex: =10
+                    ZIndex: =1
+
+                "InfoButtonCanvas1 As 'Information button'":
+                    Content: =varItem.'Approval History'
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =32
+                    Width: =32
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
 
                 ReviewersGallery1 As gallery.galleryVertical:
                     AccessibleLabel: ="Reviewers gallery"
@@ -582,16 +653,29 @@
                     TabIndex: =0
                     TemplatePadding: =0
                     TemplateSize: =If(FormScreen.Size = ScreenSize.Small, 80, 140)
-                    ZIndex: =11
+                    ZIndex: =3
 
                     RectangleShape1 As rectangle:
                         DisplayMode: =DisplayMode.Disabled
                         Fill: =RGBA(214, 221, 224, 1)
-                        Height: =78
+                        Height: |-
+                            =If(
+                                ThisItem.Step = 1,
+                                Parent.TemplateHeight - BadgeStatus1.Height - BadgeStatus1.Y,
+                                ThisItem.Step <> Parent.AllItemsCount,
+                                Parent.TemplateHeight,
+                                BadgeStatus1.Y
+                            )
                         OnSelect: =Select(Parent)
-                        Width: =0
-                        X: =56
-                        Y: =61
+                        Visible: |-
+                            =If(
+                                CountRows(varItem.Approvers) = 1,
+                                false,
+                                true
+                            )
+                        Width: =3
+                        X: =BadgeStatus1.X + (BadgeStatus1.Width / 2)
+                        Y: =If(ThisItem.Step = 1, BadgeStatus1.Height + BadgeStatus1.Y, 0)
                         ZIndex: =12
 
                     BadgeStatus1 As Badge:
@@ -631,7 +715,7 @@
 
                     ReviewTypeText1 As Text:
                         DisplayMode: =DisplayMode.Edit
-                        Height: =Parent.TemplateHeight / 2 - 5
+                        Height: =61
                         Text: =ThisItem.Department
                         VerticalAlign: ='TextCanvas.VerticalAlign'.Top
                         Weight: ="Regular"
