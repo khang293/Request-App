@@ -81,6 +81,7 @@
                 AlignInContainer: =AlignInContainer.Center
                 Height: =40
                 Icon: =Icon.Reload
+                OnSelect: =Refresh('Request HR')
                 Width: =40
                 ZIndex: =1
 
@@ -91,6 +92,9 @@
                 Height: =40
                 LayoutMinHeight: =32
                 LayoutMinWidth: =96
+                OnSelect: |-
+                    =ResetForm(ApprovalForm);
+                    Navigate(FormScreen)
                 Text: ="Create request"
                 Width: =140
                 X: =0
@@ -122,7 +126,7 @@
                 onNavigate: =false
                 onRowSelect: =false
                 onSave: =false
-                OnSelect: =false
+                OnSelect: =Set(varItem,Table_request.Selected);ViewForm(ApprovalForm);Navigate(FormScreen)
                 Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, Parent.Width)
                 X: =0
                 Y: =0

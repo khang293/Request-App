@@ -135,6 +135,7 @@
     "UserLocale": "en-US"
   },
   "ScreenOrder": [
-    "HomeScreen"
+    "HomeScreen",
+    "FormScreen"
   ]
 }
