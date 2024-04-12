@@ -1,1 +1,24 @@
-{}
+{
+  "aca9963f-fb39-404d-86b6-adf6d8a49f14": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1682/1.0.1682.3675/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://iuhedu.sharepoint.com/sites/TESTSITE": {
+        "dataSources": {
+          "Request HR": {
+            "tableName": "c5eaef40-62d2-4ee4-9c32-ab96ddf0dc24"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Request HR"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "aca9963f-fb39-404d-86b6-adf6d8a49f14"
+  }
+}
