@@ -116,7 +116,9 @@
 
             Table_request As Table.pcfdataset:
                 AlignInContainer: =AlignInContainer.Start
+                BasePaletteColor: =
                 DisplayMode: =DisplayMode.Edit
+                FontColor: =
                 Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, Parent.Height)
                 Items: ='Request HR'
                 LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
