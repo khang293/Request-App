@@ -79,10 +79,10 @@
 
             Icon3 As icon.Reload:
                 AlignInContainer: =AlignInContainer.Center
-                Height: =40
+                Height: =35
                 Icon: =Icon.Reload
                 OnSelect: =Refresh('Request HR')
-                Width: =40
+                Width: =35
                 ZIndex: =1
 
             ButtonCanvas1 As Button:
