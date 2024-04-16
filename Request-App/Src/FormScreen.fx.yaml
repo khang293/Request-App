@@ -28,7 +28,9 @@
             ZIndex: =2
 
             Header2 As Header:
+                BasePaletteColor: =
                 DisplayMode: =DisplayMode.Edit
+                FontColor: =
                 Height: =75
                 LayoutMinHeight: =75
                 LayoutMinWidth: =Parent.Width
@@ -80,6 +82,7 @@
                 FormTitleText1 As Text:
                     Align: ='TextCanvas.Align'.End
                     DisplayMode: =DisplayMode.Edit
+                    FontColor: =
                     Height: =32
                     LayoutMinHeight: =32
                     LayoutMinWidth: =96
@@ -122,6 +125,7 @@
 
                         DataCardKey19 As Text:
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =22
                             Text: =Parent.DisplayName
                             Weight: ='TextCanvas.Weight'.Semibold
@@ -145,6 +149,7 @@
 
                         ErrorMessage19 As Text:
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =30
                             Text: =Parent.Error
                             Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
@@ -157,6 +162,7 @@
                         StarVisible19 As Text:
                             Align: ='TextCanvas.Align'.Center
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =20
                             Text: ="*"
                             Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
@@ -184,6 +190,7 @@
 
                         DataCardKey1 As Text:
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =22
                             Text: =Parent.DisplayName
                             Weight: ='TextCanvas.Weight'.Semibold
@@ -195,7 +202,9 @@
 
                         "DataCardValue1 As 'Text input'":
                             AccessibleLabel: =Parent.DisplayName
+                            BasePaletteColor: =
                             DisplayMode: =Parent.DisplayMode
+                            FontColor: =
                             Height: =32
                             Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                             Required: =Parent.Required
@@ -208,6 +217,7 @@
 
                         ErrorMessage1 As Text:
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =30
                             Text: =Parent.Error
                             Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
@@ -220,6 +230,7 @@
                         StarVisible1 As Text:
                             Align: ='TextCanvas.Align'.Center
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =30
                             Text: ="*"
                             Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
@@ -247,6 +258,7 @@
 
                         DataCardKey2 As Text:
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =22
                             Text: =Parent.DisplayName
                             Weight: ='TextCanvas.Weight'.Semibold
@@ -258,7 +270,9 @@
 
                         "DataCardValue2 As 'Text input'":
                             AccessibleLabel: =Parent.DisplayName
+                            BasePaletteColor: =
                             DisplayMode: =Parent.DisplayMode
+                            FontColor: =
                             Height: =32
                             Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                             Required: =Parent.Required
@@ -271,6 +285,7 @@
 
                         ErrorMessage2 As Text:
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =30
                             Text: =Parent.Error
                             Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
@@ -283,6 +298,7 @@
                         StarVisible2 As Text:
                             Align: ='TextCanvas.Align'.Center
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =30
                             Text: ="*"
                             Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
@@ -309,6 +325,7 @@
 
                         DataCardKey3 As Text:
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =22
                             Text: =Parent.DisplayName
                             Weight: ='TextCanvas.Weight'.Semibold
@@ -332,6 +349,7 @@
 
                         ErrorMessage3 As Text:
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =30
                             Text: =Parent.Error
                             Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
@@ -344,12 +362,169 @@
                         StarVisible3 As Text:
                             Align: ='TextCanvas.Align'.Center
                             DisplayMode: =DisplayMode.Edit
+                            FontColor: =
                             Height: =20
                             Text: ="*"
                             Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                             Width: =30
                             X: =0
                             Y: =DataCardKey3.Y
+                            ZIndex: =4
+
+                    Approvers_DataCard1 As typedDataCard.fluentV9ComboBoxMultiSelectEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Approver"
+                        Default: =ThisItem.Approvers
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Approver")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =70
+                        Required: =true
+                        Update: =DataCardValue14_1.SelectedItems
+                        Width: =992
+                        WidthFit: =true
+                        X: =0
+                        Y: =3
+                        ZIndex: =8
+
+                        DataCardKey5 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =22
+                            Text: =Parent.DisplayName
+                            Weight: ='TextCanvas.Weight'.Semibold
+                            Width: =Parent.Width - 48
+                            Wrap: =false
+                            X: =24
+                            Y: =10
+                            ZIndex: =1
+
+                        ErrorMessage5 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =30
+                            Text: =Parent.Error
+                            Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =Parent.Width - 48
+                            Wrap: =true
+                            X: =24
+                            Y: =DataCardValue14_1.Y + DataCardValue14_1.Height
+                            ZIndex: =3
+
+                        StarVisible5 As Text:
+                            Align: ='TextCanvas.Align'.Center
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =20
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            X: =0
+                            Y: =DataCardKey5.Y
+                            ZIndex: =4
+
+                        DataCardValue14_1 As combobox:
+                            BorderColor: =
+                            BorderThickness: =0
+                            ChevronBackground: =RGBA(0, 0, 0, 0.04)
+                            ChevronFill: =RGBA(0, 0, 0, 0.16)
+                            ChevronHoverBackground: =
+                            ChevronHoverFill: =RGBA(214, 221, 224, 1)
+                            DefaultSelectedItems: =Parent.Default
+                            DisplayFields: =["DisplayName","Email","Picture"]
+                            DisplayMode: =Parent.DisplayMode
+                            Fill: =RGBA(247, 247, 247, 1)
+                            Height: =32
+                            HoverBorderColor: =
+                            Items: =Choices([@'Request HR'].Approvers)
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            PressedBorderColor: =
+                            SearchFields: =["DisplayName"]
+                            SearchItems: =Choices('Request HR'.Approvers,DataCardValue14_1.SearchText)
+                            SelectionColor: =RGBA(0, 0, 0, 1)
+                            SelectionFill: =RGBA(247, 247, 247, 1)
+                            Size: =10
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 48
+                            X: =24
+                            Y: =DataCardKey3.Y + DataCardKey3.Height + 4
+                            ZIndex: =5
+
+                    "'Current approver_DataCard1' As typedDataCard.fluentV9ComboBoxEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Currentapprover"
+                        Default: |-
+                            =If(
+                                ApprovalForm.Mode = FormMode.New,
+                                First(DataCardValue14_1.SelectedItems),
+                                ThisItem.'Current approver'
+                            )
+                        DisplayMode: =DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Currentapprover")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =70
+                        Required: =false
+                        Update: =DataCardValue7.Selected
+                        Width: =992
+                        WidthFit: =true
+                        X: =0
+                        Y: =4
+                        ZIndex: =8
+
+                        DataCardKey7 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =22
+                            Text: =Parent.DisplayName
+                            Weight: ='TextCanvas.Weight'.Semibold
+                            Width: =Parent.Width - 48
+                            Wrap: =false
+                            X: =24
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue7 As Combobox.pcfdataset:
+                            AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                            DefaultSelectedItems: =[Parent.Default]
+                            DisplayMode: =Parent.DisplayMode
+                            Height: =32
+                            Items: =Choices([@'Request HR'].'Current approver')
+                            ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                            Width: =Parent.Width - 48
+                            X: =24
+                            Y: =DataCardKey7.Y + DataCardKey7.Height + 4
+                            ZIndex: =2
+
+                            DisplayName1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="DisplayName"
+                                FieldName: ="DisplayName"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =1
+                                ZIndex: =16
+
+                        ErrorMessage7 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =30
+                            Text: =Parent.Error
+                            Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =Parent.Width - 48
+                            Wrap: =true
+                            X: =24
+                            Y: =DataCardValue7.Y + DataCardValue7.Height
+                            ZIndex: =3
+
+                        StarVisible7 As Text:
+                            Align: ='TextCanvas.Align'.Center
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =20
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            X: =0
+                            Y: =DataCardKey7.Y
                             ZIndex: =4
 
                     Attachments_DataCard1 As typedDataCard.attachmentsEditCard:
@@ -418,160 +593,12 @@
                             Y: =DataCardKey9.Y
                             ZIndex: =4
 
-                    Approvers_DataCard1 As typedDataCard.fluentV9ComboBoxMultiSelectEditCard:
-                        BorderStyle: =BorderStyle.Solid
-                        DataField: ="Approver"
-                        Default: =ThisItem.Approvers
-                        DisplayMode: =Parent.DisplayMode
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Approver")
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =70
-                        Required: =true
-                        Update: =DataCardValue14_1.SelectedItems
-                        Width: =992
-                        WidthFit: =true
-                        X: =0
-                        Y: =3
-                        ZIndex: =8
-
-                        DataCardKey5 As Text:
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =22
-                            Text: =Parent.DisplayName
-                            Weight: ='TextCanvas.Weight'.Semibold
-                            Width: =Parent.Width - 48
-                            Wrap: =false
-                            X: =24
-                            Y: =10
-                            ZIndex: =1
-
-                        ErrorMessage5 As Text:
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =30
-                            Text: =Parent.Error
-                            Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                            Width: =Parent.Width - 48
-                            Wrap: =true
-                            X: =24
-                            Y: =DataCardValue14_1.Y + DataCardValue14_1.Height
-                            ZIndex: =3
-
-                        StarVisible5 As Text:
-                            Align: ='TextCanvas.Align'.Center
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =20
-                            Text: ="*"
-                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                            Width: =30
-                            X: =0
-                            Y: =DataCardKey5.Y
-                            ZIndex: =4
-
-                        DataCardValue14_1 As combobox:
-                            BorderColor: =
-                            BorderThickness: =0
-                            ChevronBackground: =RGBA(0, 0, 0, 0.04)
-                            ChevronFill: =RGBA(0, 0, 0, 0.16)
-                            ChevronHoverBackground: =
-                            ChevronHoverFill: =RGBA(214, 221, 224, 1)
-                            DefaultSelectedItems: =Parent.Default
-                            DisplayFields: =["DisplayName","Email","Picture"]
-                            DisplayMode: =Parent.DisplayMode
-                            Fill: =RGBA(247, 247, 247, 1)
-                            Height: =32
-                            HoverBorderColor: =
-                            Items: =Choices([@'Request HR'].Approver)
-                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                            PressedBorderColor: =
-                            SearchFields: =["DisplayName"]
-                            SearchItems: =Choices('Request HR'.Approver,DataCardValue14_1.SearchText)
-                            SelectionColor: =RGBA(0, 0, 0, 1)
-                            SelectionFill: =RGBA(247, 247, 247, 1)
-                            Size: =10
-                            Tooltip: =Parent.DisplayName
-                            Width: =Parent.Width - 48
-                            X: =24
-                            Y: =DataCardKey3.Y + DataCardKey3.Height + 4
-                            ZIndex: =5
-
-                    "'Current approver_DataCard1' As typedDataCard.fluentV9ComboBoxEditCard":
-                        BorderStyle: =BorderStyle.Solid
-                        DataField: ="Currentapprover"
-                        Default: |-
-                            =If(
-                                ApprovalForm.Mode = FormMode.New,
-                                First(DataCardValue14_1.SelectedItems),
-                                ThisItem.'Current approver'
-                            )
-                        DisplayMode: =DisplayMode.Disabled
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Currentapprover")
-                        Fill: =RGBA(0, 0, 0, 0)
-                        Height: =70
-                        Required: =false
-                        Update: =DataCardValue7.Selected
-                        Width: =992
-                        WidthFit: =true
-                        X: =0
-                        Y: =4
-                        ZIndex: =8
-
-                        DataCardKey7 As Text:
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =22
-                            Text: =Parent.DisplayName
-                            Weight: ='TextCanvas.Weight'.Semibold
-                            Width: =Parent.Width - 48
-                            Wrap: =false
-                            X: =24
-                            Y: =10
-                            ZIndex: =1
-
-                        DataCardValue7 As Combobox.pcfdataset:
-                            AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
-                            DefaultSelectedItems: =[Parent.Default]
-                            DisplayMode: =Parent.DisplayMode
-                            Height: =32
-                            Items: =Choices([@'Request HR'].Currentapprover)
-                            ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
-                            Width: =Parent.Width - 48
-                            X: =24
-                            Y: =DataCardKey7.Y + DataCardKey7.Height + 4
-                            ZIndex: =2
-
-                            DisplayName1 As pcfDataField.textualColumn:
-                                FieldDisplayName: ="DisplayName"
-                                FieldName: ="DisplayName"
-                                FieldType: ="s"
-                                FieldVariantName: ="textualColumn"
-                                Order: =1
-                                ZIndex: =16
-
-                        ErrorMessage7 As Text:
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =30
-                            Text: =Parent.Error
-                            Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
-                            Width: =Parent.Width - 48
-                            Wrap: =true
-                            X: =24
-                            Y: =DataCardValue7.Y + DataCardValue7.Height
-                            ZIndex: =3
-
-                        StarVisible7 As Text:
-                            Align: ='TextCanvas.Align'.Center
-                            DisplayMode: =DisplayMode.Edit
-                            Height: =20
-                            Text: ="*"
-                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                            Width: =30
-                            X: =0
-                            Y: =DataCardKey7.Y
-                            ZIndex: =4
-
                 SubmitButton1 As Button:
                     AccessibleLabel: ="Submit approval request button"
                     AlignInContainer: =AlignInContainer.End
+                    BasePaletteColor: =
                     DisplayMode: =DisplayMode.Edit
+                    FontColor: =
                     Height: =32
                     LayoutMinHeight: =32
                     LayoutMinWidth: =96
@@ -605,6 +632,7 @@
                 ReviewersText1 As Text:
                     Align: ='TextCanvas.Align'.End
                     DisplayMode: =DisplayMode.Edit
+                    FontColor: =
                     Height: =32
                     LayoutMinHeight: =32
                     LayoutMinWidth: =96
@@ -617,8 +645,10 @@
                     ZIndex: =1
 
                 "InfoButtonCanvas1 As 'Information button'":
+                    BasePaletteColor: =
                     Content: =varItem.'Approval History'
                     DisplayMode: =DisplayMode.Edit
+                    FontColor: =
                     Height: =32
                     LayoutMinHeight: =32
                     LayoutMinWidth: =32
@@ -697,6 +727,7 @@
                             )
                         Content: =
                         DisplayMode: =DisplayMode.Edit
+                        FontColor: =
                         Height: =47
                         Width: =49
                         X: =30
@@ -705,6 +736,7 @@
 
                     ReviewerNameText1 As Text:
                         DisplayMode: =DisplayMode.Edit
+                        FontColor: =
                         Height: =26
                         Text: =ThisItem.DisplayName
                         Weight: ="Regular"
@@ -715,6 +747,7 @@
 
                     ReviewTypeText1 As Text:
                         DisplayMode: =DisplayMode.Edit
+                        FontColor: =
                         Height: =61
                         Text: =ThisItem.Department
                         VerticalAlign: ='TextCanvas.VerticalAlign'.Top
