@@ -8,6 +8,9 @@
     "datasets": {
       "https://iuhedu.sharepoint.com/sites/TESTSITE": {
         "dataSources": {
+          "Admin list": {
+            "tableName": "b426d9dc-fab2-40f2-9c79-f68b2eb9a2aa"
+          },
           "Request HR": {
             "tableName": "c5eaef40-62d2-4ee4-9c32-ab96ddf0dc24"
           }
@@ -15,7 +18,8 @@
       }
     },
     "dataSources": [
-      "Request HR"
+      "Request HR",
+      "Admin list"
     ],
     "dependencies": {},
     "dependents": [],

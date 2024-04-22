@@ -5,7 +5,7 @@
       "DataflowAnalysisEnabled": false,
       "DataflowAnalysisFlagStateToggledByUser": false
     },
-    "DocVersion": "1.339",
+    "DocVersion": "1.341",
     "MinVersionToLoad": "1.331",
     "MSAppStructureVersion": "2.0"
   },
@@ -88,7 +88,7 @@
       "showclassicthemes": false,
       "smartemaildatacard": false,
       "sqlstoredprocedureenabled": false,
-      "supportcolumnnamesasidentifiers": false,
+      "supportcolumnnamesasidentifiers": true,
       "tabledoesntwraprecords": true,
       "usedisplaynamemetadata": true,
       "useenforcesavedatalimits": true,
@@ -124,7 +124,7 @@
     "ShowStatusBar": false
   },
   "PublishInfo": {
-    "AppName": "Request App DEV NormalFunction",
+    "AppName": "4cc02d8a-4606-4b25-8e6d-9f71ba36ee87",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",

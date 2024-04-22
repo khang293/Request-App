@@ -113,7 +113,7 @@
                         Default: |-
                             =If(ApprovalForm.Mode=FormMode.New,{Value:"Pending Approval"},ThisItem.Status)
                         DisplayMode: =DisplayMode.Disabled
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Status")
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,Status)
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =70
                         Required: =false
@@ -176,10 +176,10 @@
                         DataField: ="Title"
                         Default: =ThisItem.Title
                         DisplayMode: =Parent.DisplayMode
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Title")
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,Title)
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =70
-                        MaxLength: =DataSourceInfo([@'Request HR'], DataSourceInfo.MaxLength, "Title")
+                        MaxLength: =DataSourceInfo([@'Request HR'], DataSourceInfo.MaxLength, Title)
                         Required: =true
                         Update: =DataCardValue1.Value
                         Width: =992
@@ -244,10 +244,10 @@
                         DataField: ="Message"
                         Default: =ThisItem.Message
                         DisplayMode: =Parent.DisplayMode
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Message")
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,Message)
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =70
-                        MaxLength: =DataSourceInfo([@'Request HR'], DataSourceInfo.MaxLength, "Message")
+                        MaxLength: =DataSourceInfo([@'Request HR'], DataSourceInfo.MaxLength, Message)
                         Required: =false
                         Update: =DataCardValue2.Value
                         Width: =992
@@ -312,7 +312,7 @@
                         DataField: ="Department"
                         Default: =ThisItem.Department
                         DisplayMode: =Parent.DisplayMode
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Department")
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,Department)
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =70
                         Required: =true
@@ -376,7 +376,7 @@
                         DataField: ="Approver"
                         Default: =ThisItem.Approvers
                         DisplayMode: =Parent.DisplayMode
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Approver")
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,Approvers)
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =70
                         Required: =true
@@ -460,7 +460,7 @@
                                 ThisItem.'Current approver'
                             )
                         DisplayMode: =DisplayMode.Disabled
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"Currentapprover")
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,'Current approver')
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =70
                         Required: =false
@@ -532,7 +532,7 @@
                         DataField: ="{Attachments}"
                         Default: =ThisItem.Attachments
                         DisplayMode: =Parent.DisplayMode
-                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,"{Attachments}")
+                        DisplayName: =DataSourceInfo([@'Request HR'],DataSourceInfo.DisplayName,Attachments)
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =50
                         Required: =false

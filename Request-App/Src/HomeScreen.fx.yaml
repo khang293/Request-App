@@ -123,9 +123,21 @@
                 FontColor: =
                 Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, Parent.Height)
                 Items: |-
-                    =Filter(
+                    =If(
+                        !IsBlank(
+                            LookUp(
+                                Adminlist,
+                                User().Email in Concat(
+                                    'Admin group',
+                                    Email & ";"
+                                )
+                            )
+                        ),
                         'Request HR',
-                        'Created By'.Email = User().Email
+                        Filter(
+                            'Request HR',
+                            'Created By'.Email = User().Email
+                        )
                     )
                 LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
                 LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
