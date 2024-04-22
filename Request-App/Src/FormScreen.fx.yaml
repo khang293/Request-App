@@ -612,6 +612,66 @@
                     Y: =0
                     ZIndex: =8
 
+                ButtonCanvas2 As Button:
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: |-
+                        =Set(
+                            ApproverDefault,
+                            LookUp(
+                                'Approver default',
+                                Title = "Approver 1 and 2"
+                            )
+                        );
+                    Text: ="add approver"
+                    Width: =96
+                    X: =0
+                    Y: =0
+                    ZIndex: =9
+
+                ButtonCanvas3 As Button:
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: |-
+                        =Patch(
+                            'Request HR',
+                            LookUp(
+                                'Request HR',
+                                ID = 8
+                            ),
+                            {
+                                Approvers: Table(
+                                    {
+                                        '@odata.type': ApproverDefault.'Approver 1'.Email,
+                                        Claims: ApproverDefault.'Approver 1'.Email,
+                                        Department: "",
+                                        DisplayName: "",
+                                        Email: ApproverDefault.'Approver 1'.Email,
+                                        JobTitle: "",
+                                        Picture: ""
+                                    },
+                                    {
+                                        '@odata.type': ApproverDefault.'Approver 2'.Email,
+                                        Claims: ApproverDefault.'Approver 2'.Email,
+                                        Department: "",
+                                        DisplayName: "",
+                                        Email: ApproverDefault.'Approver 2'.Email,
+                                        JobTitle: "",
+                                        Picture: ""
+                                    }
+                                )
+                            }
+                        )
+                    Text: ="Submit"
+                    Width: =96
+                    X: =0
+                    Y: =0
+                    ZIndex: =10
+
             SidebarContainer1 As groupContainer.verticalAutoLayoutContainer:
                 Fill: =RGBA(255, 255, 255, 1)
                 FillPortions: =2

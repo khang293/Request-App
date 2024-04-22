@@ -11,6 +11,9 @@
           "Admin list": {
             "tableName": "b426d9dc-fab2-40f2-9c79-f68b2eb9a2aa"
           },
+          "Approver default": {
+            "tableName": "8d2e91f9-a36b-4c04-9675-cd815d640147"
+          },
           "Request HR": {
             "tableName": "c5eaef40-62d2-4ee4-9c32-ab96ddf0dc24"
           }
@@ -19,7 +22,8 @@
     },
     "dataSources": [
       "Request HR",
-      "Admin list"
+      "Admin list",
+      "Approver default"
     ],
     "dependencies": {},
     "dependents": [],
