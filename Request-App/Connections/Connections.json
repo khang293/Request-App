@@ -1,4 +1,18 @@
 {
+  "1ea31b36-edb9-42ce-a5e8-f58a190713e6": {
+    "connectionRef": {
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1677/1.0.1677.3637/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "1ea31b36-edb9-42ce-a5e8-f58a190713e6"
+  },
   "aca9963f-fb39-404d-86b6-adf6d8a49f14": {
     "connectionRef": {
       "displayName": "SharePoint",

@@ -430,7 +430,30 @@
                             ChevronFill: =RGBA(0, 0, 0, 0.16)
                             ChevronHoverBackground: =
                             ChevronHoverFill: =RGBA(214, 221, 224, 1)
-                            DefaultSelectedItems: =Parent.Default
+                            DefaultSelectedItems: |-
+                                =//Parent.Default
+                                If(
+                                    ApprovalForm.Mode = FormMode.New,
+                                    [
+                                        {
+                                            DisplayName: ApproverDefault.'Approver 1'.DisplayName,
+                                            Claims: ApproverDefault.'Approver 1'.Email,
+                                            Department: "",
+                                            Email: ApproverDefault.'Approver 1'.Email,
+                                            JobTitle: "",
+                                            Picture: ""
+                                        },
+                                        {
+                                            DisplayName: ApproverDefault.'Approver 2'.DisplayName,
+                                            Claims: ApproverDefault.'Approver 2'.Email,
+                                            Department: "",
+                                            Email: ApproverDefault.'Approver 2'.Email,
+                                            JobTitle: "",
+                                            Picture: ""
+                                        }
+                                    ],
+                                    ThisItem.Approvers
+                                )
                             DisplayFields: =["DisplayName","Email","Picture"]
                             DisplayMode: =Parent.DisplayMode
                             Fill: =RGBA(247, 247, 247, 1)
@@ -613,11 +636,13 @@
                     ZIndex: =8
 
                 ButtonCanvas2 As Button:
+                    BasePaletteColor: =
                     DisplayMode: =DisplayMode.Edit
+                    FontColor: =
                     Height: =32
                     LayoutMinHeight: =32
                     LayoutMinWidth: =96
-                    OnSelect: |-
+                    OnSelect: |
                         =Set(
                             ApproverDefault,
                             LookUp(
@@ -632,7 +657,9 @@
                     ZIndex: =9
 
                 ButtonCanvas3 As Button:
+                    BasePaletteColor: =
                     DisplayMode: =DisplayMode.Edit
+                    FontColor: =
                     Height: =32
                     LayoutMinHeight: =32
                     LayoutMinWidth: =96
@@ -718,6 +745,7 @@
                     ZIndex: =2
 
                 ReviewersGallery1 As gallery.galleryVertical:
+                    '#CopilotOverlayLabel': ="Filtered"
                     AccessibleLabel: ="Reviewers gallery"
                     DelayItemLoading: =true
                     Items: |-
