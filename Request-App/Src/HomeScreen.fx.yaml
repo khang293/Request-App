@@ -1,6 +1,9 @@
 "HomeScreen As screen.'autoLayout_HeaderFooter_ver1.0'":
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
 
     ScreenContainer2 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
         Fill: =RGBA(245, 245, 245, 1)
         Height: =Parent.Height
         LayoutAlignItems: =LayoutAlignItems.Stretch
@@ -11,10 +14,15 @@
         PaddingLeft: =16
         PaddingRight: =16
         PaddingTop: =8
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
         Width: =Parent.Width
         ZIndex: =1
 
         HeaderContainer2 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
             Fill: =RGBA(40, 134, 222, 1)
             FillPortions: =0
             Height: =75
@@ -24,15 +32,18 @@
             LayoutMode: =LayoutMode.Auto
             PaddingLeft: =12
             PaddingRight: =12
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
             ZIndex: =1
 
             Icon1 As icon.Home:
                 AlignInContainer: =AlignInContainer.Center
+                BorderColor: =App.Theme.Colors.Darker40
                 Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
                 Height: =75
                 Icon: =Icon.Home
                 Width: =45
@@ -41,7 +52,10 @@
             Label1 As label:
                 Align: =Align.Center
                 AlignInContainer: =AlignInContainer.Center
+                BorderColor: =App.Theme.Colors.Darker40
                 Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
                 Height: =75
                 PaddingBottom: =0
                 PaddingRight: =0
@@ -52,6 +66,9 @@
 
             Image2 As image:
                 AlignInContainer: =AlignInContainer.Center
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
                 Height: =70
                 Image: =User().Image
                 PaddingBottom: =8
@@ -62,6 +79,7 @@
                 ZIndex: =3
 
         FooterContainer1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 1)
             FillPortions: =0
             Height: =75
@@ -71,14 +89,18 @@
             LayoutMode: =LayoutMode.Auto
             PaddingLeft: =12
             PaddingRight: =12
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
             ZIndex: =2
 
             Icon3 As icon.Reload:
                 AlignInContainer: =AlignInContainer.Center
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =App.Theme.Colors.Darker30
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(244, 244, 244, 1)
                 Height: =35
                 Icon: =Icon.Reload
                 OnSelect: =Refresh('Request HR')
@@ -104,16 +126,17 @@
                 ZIndex: =2
 
         MainContainer2 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
             Fill: =RGBA(255, 255, 255, 1)
             Height: =Parent.Height
             LayoutDirection: =LayoutDirection.Vertical
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
             ZIndex: =3
 
             Table_request As Table.pcfdataset:
